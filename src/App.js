@@ -3,7 +3,8 @@ import * as api from './component/api';
 import './App.css';
 import './component/home/home.css';
 import Home from './component/home/Home';
-import { Router } from '@reach/router';
+import Navbar from './component/nav/Navbar.jsx';
+import { Link, Router } from '@reach/router';
 
 class App extends Component {
 	state = {
@@ -12,6 +13,16 @@ class App extends Component {
 	render() {
 		return (
 			<div>
+				<header>
+					<h1>
+						{' '}
+						<Link className="links" to="/">
+							{' '}
+							NC NEWS{' '}
+						</Link>{' '}
+					</h1>
+				</header>
+				<Navbar topics={this.state.topics} />
 				<Router>
 					<Home path="/" />
 				</Router>
@@ -24,10 +35,9 @@ class App extends Component {
 		this.setTopics();
 	};
 
-  // sets state with topics array
+	// sets state with topics array
 	setTopics = () => {
 		api.fetchTopics().then(({ topics }) => {
-			console.log(topics);
 			this.setState({
 				topics: topics
 			});
