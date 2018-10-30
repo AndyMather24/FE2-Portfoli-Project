@@ -6,6 +6,9 @@ import Home from './component/home/Home';
 import { Router } from '@reach/router';
 
 class App extends Component {
+	state = {
+		topics: []
+	};
 	render() {
 		return (
 			<div>
@@ -18,8 +21,16 @@ class App extends Component {
 
 	componentDidMount = () => {
 		console.log('mounting app');
-		api.fetchTopics().then((topics) => {
+		this.setTopics();
+	};
+
+  // sets state with topics array
+	setTopics = () => {
+		api.fetchTopics().then(({ topics }) => {
 			console.log(topics);
+			this.setState({
+				topics: topics
+			});
 		});
 	};
 }
