@@ -6,6 +6,7 @@ const Nav = () => {
 			<nav>
                 <Link to='/'> Home </Link>{" "}
                 
+                
 
                 
             </nav>
