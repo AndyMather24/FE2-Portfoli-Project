@@ -1,0 +1,35 @@
+.Homepage {
+	height: 100vh;
+	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr 2fr 3fr;
+	grid-template-rows: 2fr 1fr 10fr 2fr;
+	grid-template-areas: "header header header header" "nav nav nav nav" "chart chart main main" "footer footer footer footer";
+}
+header {
+	background: red;
+	grid-area: header;
+}
+h1 {
+	text-align: left;
+	grid-area: header;
+}
+nav {
+	background: green;
+	grid-area: nav;
+}
+
+.chart {
+	background: yellow;
+	grid-area: chart;
+}
+
+.main {
+	background: #61dafb;
+	grid-area: main;
+}
+
+footer {
+	background: navy;
+	grid-area: footer;
+}
