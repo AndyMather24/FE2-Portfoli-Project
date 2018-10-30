@@ -4,12 +4,11 @@ const Nav = () => {
 	return (
 		<div>
 			<nav>
-                <Link to='/'> Home </Link>{" "}
-                
-                
-
-                
-            </nav>
+				<Link className="links" to="/">
+					{' '}
+					Home{' '}
+				</Link>{' '}
+			</nav>
 		</div>
 	);
 };

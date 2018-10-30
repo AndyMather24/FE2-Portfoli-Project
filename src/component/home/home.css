@@ -1,3 +1,6 @@
+* {
+	font-family: 'Roboto', sans-serif;
+}
 .Homepage {
 	height: 100vh;
 	text-align: center;
@@ -7,7 +10,7 @@
 	grid-template-areas: "header header header header" "nav nav nav nav" "chart chart main main" "footer footer footer footer";
 }
 header {
-	background: red;
+	border: 2px red solid;
 	grid-area: header;
 }
 h1 {
@@ -15,21 +18,21 @@ h1 {
 	grid-area: header;
 }
 nav {
-	background: green;
+	border: 2px green solid;
 	grid-area: nav;
 }
 
 .chart {
-	background: yellow;
+	border: 2px yellow solid;
 	grid-area: chart;
 }
 
 .main {
-	background: #61dafb;
+	border: 2px lightcoral solid;
 	grid-area: main;
 }
 
 footer {
-	background: navy;
+	border: 2px navy solid;
 	grid-area: footer;
 }

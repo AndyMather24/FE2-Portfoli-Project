@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import * as api from './component/api';
 import './App.css';
 import './component/home/home.css';
 import Home from './component/home/Home';
@@ -15,6 +15,13 @@ class App extends Component {
 			</div>
 		);
 	}
+
+	componentDidMount = () => {
+		console.log('mounting app');
+		api.fetchTopics().then((topics) => {
+			console.log(topics);
+		});
+	};
 }
 
 export default App;
