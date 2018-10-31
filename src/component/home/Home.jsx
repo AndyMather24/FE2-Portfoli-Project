@@ -23,7 +23,7 @@ class Home extends Component {
 		);
 	}
 	componentDidMount = () => {
-		console.log('Mounting');
+		console.log('Mounting home');
 		api.fetchArticles().then((articles) => {
 			this.setState({
 				articles: articles

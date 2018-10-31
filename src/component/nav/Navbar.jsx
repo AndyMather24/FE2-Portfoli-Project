@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { Link } from '@reach/router';
 
 const Navbar = (props) => {
-	console.log(props);
 	return (
 		<div>
 			<nav>
