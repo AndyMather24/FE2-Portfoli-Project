@@ -21,8 +21,9 @@ class App extends Component {
 							NC NEWS{' '}
 						</Link>{' '}
 					</h1>
+					<Navbar topics={this.state.topics} />
 				</header>
-				<Navbar topics={this.state.topics} />
+
 				<Router>
 					<Home path="/" />
 				</Router>

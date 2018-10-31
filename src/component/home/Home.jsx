@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Navbar from '../nav/Navbar.jsx';
-import { Link, Router } from '@reach/router';
 import * as api from '../api.js';
 import Articles from '../articles/Articles.jsx';
+import Topicchart from '../topicchart/Topicchart.jsx';
 
 class Home extends Component {
 	state = {
@@ -12,7 +11,9 @@ class Home extends Component {
 		return (
 			<div className="Homepage">
 				<nav />
-				<div className="chart"> Topics chart</div>
+				<div className="chart">
+					<Topicchart />
+				</div>
 				<article className="main">
 					<Articles articlesData={this.state.articles} />
 				</article>
