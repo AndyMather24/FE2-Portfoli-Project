@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
+import './articles.css';
 class Articles extends Component {
 	render() {
 		return (
@@ -10,7 +11,7 @@ class Articles extends Component {
 						return (
 							<div key={article._id} className="articleContainer">
 								<h4>
-									<Link to="">{article.title}</Link>
+									<Link to={`/articles/${article._id}`}>{article.title}</Link>
 								</h4>
 								<p>{`Comments: ${article.comment_count}`}</p>
 							</div>

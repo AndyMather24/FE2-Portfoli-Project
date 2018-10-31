@@ -6,7 +6,7 @@ import { Link, Router } from '@reach/router';
 import Home from './component/home/Home';
 import Navbar from './component/nav/Navbar.jsx';
 import Topic from './component/topics/Topic.jsx';
-
+import Article from './component/article/Article.jsx';
 class App extends Component {
 	state = {
 		topics: []
@@ -28,6 +28,7 @@ class App extends Component {
 				<Router>
 					<Home path="/" />
 					<Topic path="/topics/:topicslug" topicsData={this.state.topics} />
+					<Article path="/articles/:article_id" />
 				</Router>
 			</div>
 		);
