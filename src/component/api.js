@@ -19,3 +19,9 @@ export const fetchArticlesByTopic = (topicslug) => {
 		return data;
 	});
 };
+
+export const fetchArticleDataById = (id) => {
+	return axios.get(`${baseUrl}articles/${id}`).then(({ data }) => {
+		return data;
+	});
+};
