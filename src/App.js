@@ -8,6 +8,7 @@ import Home from './component/home/Home';
 import Navbar from './component/nav/Navbar.jsx';
 import Topic from './component/topics/Topic.jsx';
 import Article from './component/article/Article.jsx';
+import Login from './component/login/Login';
 class App extends Component {
 	state = {
 		topics: [],
@@ -24,8 +25,8 @@ class App extends Component {
 							Site Name
 						</Link>{' '}
 					</h1>
-
 					<Navbar className="nav-bar" topics={this.state.topics} />
+					<Login />
 				</header>
 
 				<Router>

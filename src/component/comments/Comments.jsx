@@ -5,14 +5,16 @@ class Comments extends Component {
 		comments: []
 	};
 	render() {
-		console.log(this.props);
+		console.log(this.state.comments);
 		return (
 			<div>
 				<h3>Comments...</h3>
 				{this.state.comments.map((comment) => {
 					return (
-						<div>
+						<div key={comment._id}>
 							<p>{comment.body}</p>;
+							<p>{comment.created_by.username}</p>
+							<img src={comment.created_by.avatar_url} />
 						</div>
 					);
 				})}
@@ -21,7 +23,7 @@ class Comments extends Component {
 	}
 
 	componentDidMount = () => {
-		api.fetchCommentsById('5bd6f57bd5c8e378dda1c932').then(({ comments }) => {
+		api.fetchCommentsById(this.props.article_id).then(({ comments }) => {
 			this.setState({
 				comments: comments
 			});

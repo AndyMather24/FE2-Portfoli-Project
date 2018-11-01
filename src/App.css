@@ -23,7 +23,9 @@
 		transform: rotate(360deg);
 	}
 }
-
+header {
+	display: flex;
+}
 header h1 {
 	font-family: fantasy;
 }

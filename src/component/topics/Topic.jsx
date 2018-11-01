@@ -7,7 +7,7 @@ class Topic extends Component {
 		articles: []
 	};
 	render() {
-		console.log(this.state.articles);
+		//console.log(this.state.articles);
 		return (
 			<div>
 				<h2>{this.props.topicslug}</h2>

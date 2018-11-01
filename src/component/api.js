@@ -31,3 +31,9 @@ export const fetchCommentsById = (id) => {
 		return data;
 	});
 };
+
+export const fetchUser = (username) => {
+	return axios.get(`${baseUrl}/users/${username}`).then(({ data }) => {
+		return data;
+	});
+};

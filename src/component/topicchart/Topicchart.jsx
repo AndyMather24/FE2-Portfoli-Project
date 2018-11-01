@@ -15,7 +15,7 @@ const data = {
 export default class Chart extends Component {
 	render() {
 		this.props.topicsTitles ? (data.labels = this.props.topicsTitles) : (data.labels = []);
-		console.log(this.props.topicsTitles);
+		//console.log(this.props.topicsTitles);
 		return (
 			<div>
 				<h2>Choose A Topic</h2>
