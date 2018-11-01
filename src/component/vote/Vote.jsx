@@ -28,12 +28,11 @@ class Vote extends Component {
 
 	handleVote = (e) => {
 		let vote = +e.target.value;
-
 		this.setState({
 			totalVotes: this.state.totalVotes - vote
 		});
 		api.vote(e.target.name, this.props.article_id).then((data) => {
-			return console.log(data);
+			return data;
 		});
 	};
 }

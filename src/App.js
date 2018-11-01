@@ -9,10 +9,12 @@ import Navbar from './component/nav/Navbar.jsx';
 import Topic from './component/topics/Topic.jsx';
 import Article from './component/article/Article.jsx';
 import Login from './component/login/Login';
+import Logout from './component/log-out/Logout';
 class App extends Component {
 	state = {
 		topics: [],
-		topicsTitles: []
+		topicsTitles: [],
+		user: {}
 	};
 	render() {
 		return (
@@ -26,7 +28,8 @@ class App extends Component {
 						</Link>{' '}
 					</h1>
 					<Navbar className="nav-bar" topics={this.state.topics} />
-					<Login />
+					{!this.state.user.username && <Login setUser={this.setUser} loggedInUser={this.state.user} />}
+					{this.state.user.username && <Logout loggedInUser={this.state.user} logout={this.ClearUser} />}
 				</header>
 
 				<Router>
@@ -53,6 +56,16 @@ class App extends Component {
 				topics: topics,
 				topicsTitles: titles
 			});
+		});
+	};
+	setUser = (user) => {
+		this.setState({
+			user: user
+		});
+	};
+	ClearUser = () => {
+		this.setState({
+			user: {}
 		});
 	};
 }
