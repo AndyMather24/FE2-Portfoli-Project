@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../api';
+import Comments from '../comments/Comments';
 class Article extends Component {
 	state = {
 		choosenArticle: {}
@@ -15,8 +16,7 @@ class Article extends Component {
 					<p>{this.state.choosenArticle.body}</p>
 				</section>
 				<section>
-					{/* <img src={this.state.choosenArticle.created_by.avatar_url}> </img>
-					<h3>{this.state.choosenArticle.length && this.state.choosenArticle.created_by.username}</h3> */}
+					<Comments article_id={this.props.article_id} />
 				</section>
 			</div>
 		);
