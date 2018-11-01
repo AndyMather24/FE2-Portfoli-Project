@@ -37,3 +37,9 @@ export const fetchUser = (username) => {
 		return data;
 	});
 };
+
+export const vote = () => {
+	return axios.patch(`${baseUrl}/articles/5bd6f57bd5c8e378dda1c925`).then(({ data }) => {
+		return data;
+	});
+};

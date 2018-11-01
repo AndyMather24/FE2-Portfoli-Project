@@ -5,7 +5,7 @@ class Comments extends Component {
 		comments: []
 	};
 	render() {
-		console.log(this.state.comments);
+		//console.log(this.state.comments);
 		return (
 			<div>
 				<h3>Comments...</h3>

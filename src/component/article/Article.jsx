@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import * as api from '../api';
 import Comments from '../comments/Comments';
+import Vote from '../vote/Vote';
 class Article extends Component {
 	state = {
 		choosenArticle: {}
 	};
 	render() {
-		// console.log(this.state.choosenArticle.created_by);
-
+		console.log(this.state.votes);
 		return (
 			<div>
 				<section>
 					<img />
 					<h1>{this.state.choosenArticle.title}</h1>
 					<p>{this.state.choosenArticle.body}</p>
+					<p> {this.state.votes >= 0 && <Vote votes={this.state.votes} />}</p>
 				</section>
 				<section>
 					<Comments article_id={this.props.article_id} />
@@ -25,7 +26,8 @@ class Article extends Component {
 		console.log('Mounting art');
 		api.fetchArticleDataById(this.props.article_id).then((article) => {
 			this.setState({
-				choosenArticle: article
+				choosenArticle: article,
+				votes: article.votes
 			});
 		});
 	};

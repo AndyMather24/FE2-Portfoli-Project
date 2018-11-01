@@ -2,15 +2,25 @@ import React, { Component } from 'react';
 import * as api from '../api';
 class Login extends Component {
 	state = {
-		loggedInUser: {}
+		loggedInUser: {},
+		currentUsername: '',
+		loggedIn: false
 	};
 	render() {
 		return (
 			<div>
-				<form onSubmit={this.handleSubmit}>
-					Username: <input onChange={this.handleChange} type="text" name="username" />
-					<button> Login </button>
-				</form>
+				{!this.state.loggedIn && (
+					<form onSubmit={this.handleSubmit}>
+						Username: <input onChange={this.handleChange} type="text" name="username" value={this.state.currentUsername} />
+						<button> Login </button>
+					</form>
+				)}
+				{this.state.loggedIn && (
+					<div>
+						<p>Logged in: {this.state.loggedInUser.user.username}</p>
+						<img src={this.state.loggedInUser.user.avatar_url} width="20px" height="20px" />
+					</div>
+				)}
 			</div>
 		);
 	}
@@ -18,11 +28,14 @@ class Login extends Component {
 		e.preventDefault();
 		//console.log(username.value);
 		api.fetchUser(this.state.currentUsername).then((data) => {
-			//console.log(data);
 			data.user === null
-				? console.log('Your not a user')
+				? this.setState({
+						loggedIn: false,
+						currentUsername: ''
+					})
 				: this.setState({
-						loggedInUser: data
+						loggedInUser: data,
+						loggedIn: true
 					});
 		});
 	};
