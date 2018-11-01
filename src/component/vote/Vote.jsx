@@ -3,17 +3,17 @@ import * as api from '../api';
 class Vote extends Component {
 	state = {
 		votes: 0,
-		totalVotes: 0
+		totalVotes: this.props.votes
 	};
 	render() {
 		return (
 			<div>
 				<p>{this.state.totalVotes}</p>
-				<button onClick={this.handleVote} name="down" value="-1">
+				<button onClick={this.handleVote} name="up" value="-1">
 					{' '}
 					Vote Up{' '}
 				</button>
-				<button onClick={this.handleVote} name="up" value="1">
+				<button onClick={this.handleVote} name="down" value="1">
 					{' '}
 					Vote Down{' '}
 				</button>
@@ -28,10 +28,13 @@ class Vote extends Component {
 
 	handleVote = (e) => {
 		let vote = +e.target.value;
+
 		this.setState({
 			totalVotes: this.state.totalVotes - vote
 		});
-		e.api.vote();
+		api.vote(e.target.name, this.props.article_id).then((data) => {
+			return console.log(data);
+		});
 	};
 }
 

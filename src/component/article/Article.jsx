@@ -14,7 +14,7 @@ class Article extends Component {
 					<img />
 					<h1>{this.state.choosenArticle.title}</h1>
 					<p>{this.state.choosenArticle.body}</p>
-					<p> {this.state.votes >= 0 && <Vote votes={this.state.votes} />}</p>
+					<p> {this.state.votes >= 0 && <Vote votes={this.state.votes} article_id={this.props.article_id} />}</p>
 				</section>
 				<section>
 					<Comments article_id={this.props.article_id} />

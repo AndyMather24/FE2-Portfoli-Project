@@ -38,8 +38,8 @@ export const fetchUser = (username) => {
 	});
 };
 
-export const vote = () => {
-	return axios.patch(`${baseUrl}/articles/5bd6f57bd5c8e378dda1c925`).then(({ data }) => {
+export const vote = (direction, id) => {
+	return axios.patch(`${baseUrl}/articles/${id}/?vote=${direction}`).then(({ data }) => {
 		return data;
 	});
 };
