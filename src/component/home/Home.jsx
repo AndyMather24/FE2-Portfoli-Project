@@ -12,7 +12,7 @@ class Home extends Component {
 			<div className="Homepage">
 				<nav />
 				<div className="chart">
-					<Topicchart />
+					<Topicchart topicsTitles={this.props.topicsTitles} />
 				</div>
 				<article className="main">
 					<Articles articlesData={this.state.articles} />
@@ -22,6 +22,7 @@ class Home extends Component {
 			</div>
 		);
 	}
+
 	componentDidMount = () => {
 		console.log('Mounting home');
 		api.fetchArticles().then((articles) => {

@@ -27,7 +27,7 @@ class Topic extends Component {
 	};
 
 	setArtcles = (topicslug) => {
-		api.fetchArticlesByTopic(topicslug).then(({ articles }) => {
+		api.fetchArticlesByTopic(topicslug).then((articles) => {
 			this.setState({
 				articles: articles
 			});

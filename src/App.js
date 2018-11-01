@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as api from './component/api';
 import './App.css';
+import './component/nav/nav.css';
 import './component/home/home.css';
 import { Link, Router } from '@reach/router';
 import Home from './component/home/Home';
@@ -9,7 +10,8 @@ import Topic from './component/topics/Topic.jsx';
 import Article from './component/article/Article.jsx';
 class App extends Component {
 	state = {
-		topics: []
+		topics: [],
+		topicsTitles: []
 	};
 	render() {
 		return (
@@ -19,14 +21,15 @@ class App extends Component {
 						{' '}
 						<Link className="links" to="/">
 							{' '}
-							NC NEWS{' '}
+							Site Name
 						</Link>{' '}
 					</h1>
-					<Navbar topics={this.state.topics} />
+
+					<Navbar className="nav-bar" topics={this.state.topics} />
 				</header>
 
 				<Router>
-					<Home path="/" />
+					<Home path="/" topicsTitles={this.state.topicsTitles} />
 					<Topic path="/topics/:topicslug" topicsData={this.state.topics} />
 					<Article path="/articles/:article_id" />
 				</Router>
@@ -42,8 +45,12 @@ class App extends Component {
 	// sets state with topics array
 	setTopics = () => {
 		api.fetchTopics().then(({ topics }) => {
+			const titles = topics.map((topic) => {
+				return topic.title;
+			});
 			this.setState({
-				topics: topics
+				topics: topics,
+				topicsTitles: titles
 			});
 		});
 	};

@@ -4,12 +4,11 @@ import { Link } from '@reach/router';
 const Navbar = (props) => {
 	return (
 		<div>
-			<nav>
+			<nav className="nav-bar">
 				{props.topics.map((topic) => {
 					return (
 						<Fragment key={topic._id}>
 							<Link to={`/topics/${topic.slug}`}>{topic.title}</Link>
-							{' | '}
 						</Fragment>
 					);
 				})}

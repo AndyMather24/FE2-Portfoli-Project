@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 
 const data = {
-	labels: [ 'Red', 'Green', 'Yellow' ],
+	labels: [],
 	datasets: [
 		{
 			data: [ 300, 50, 100 ],
@@ -14,11 +14,15 @@ const data = {
 
 export default class Chart extends Component {
 	render() {
+		this.props.topicsTitles ? (data.labels = this.props.topicsTitles) : (data.labels = []);
+		console.log(this.props.topicsTitles);
 		return (
 			<div>
-				<h2>Doughnut Example</h2>
-				<Doughnut data={data} />
+				<h2>Choose A Topic</h2>
+				<Doughnut className="dough-chart" data={data} />
 			</div>
 		);
 	}
+
+	componentDidMount = () => {};
 }

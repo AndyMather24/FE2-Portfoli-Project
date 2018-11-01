@@ -15,11 +15,6 @@
   color: white;
 } */
 
-.links {
-	color: #61dafb;
-	text-decoration: none;
-}
-
 @keyframes App-logo-spin {
 	from {
 		transform: rotate(0deg);
@@ -27,4 +22,12 @@
 	to {
 		transform: rotate(360deg);
 	}
+}
+
+header h1 {
+	font-family: fantasy;
+}
+header .quote {
+	font-size: 12px;
+	padding-top: 2px;
 }

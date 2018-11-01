@@ -10,7 +10,6 @@
 	grid-template-areas: "header header header header" "nav nav nav nav" "chart chart main main" "footer footer footer footer";
 }
 header {
-	border: 2px red solid;
 	grid-area: header;
 }
 h1 {
@@ -18,21 +17,18 @@ h1 {
 	grid-area: header;
 }
 nav {
-	border: 1px green solid;
 	grid-area: nav;
 }
 
 .chart {
-	border: 2px yellow solid;
 	grid-area: chart;
+	max-width: auto;
 }
 
 .main {
-	border: 2px lightcoral solid;
 	grid-area: main;
 }
 
 footer {
-	border: 2px navy solid;
 	grid-area: footer;
 }

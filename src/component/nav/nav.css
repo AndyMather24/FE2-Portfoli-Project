@@ -1,0 +1,13 @@
+.links {
+	text-decoration: none;
+	color: black;
+	padding-bottom: 2px;
+}
+.nav-bar {
+	text-align: center;
+	padding: 10px;
+}
+.nav-bar a {
+	padding: 15px;
+	text-decoration: none;
+}
