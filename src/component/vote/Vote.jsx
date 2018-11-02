@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import * as api from '../api';
 class Vote extends Component {
 	state = {
-		votes: 0,
-		totalVotes: this.props.votes
+		totalVotes: 0
 	};
 	render() {
 		return (

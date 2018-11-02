@@ -43,3 +43,10 @@ export const vote = (direction, id) => {
 		return data;
 	});
 };
+
+export const postArticle = (body, topic) => {
+	console.log(body);
+	return axios.post(`${baseUrl}topics/${topic}/articles`, body).then((res) => {
+		return res;
+	});
+};

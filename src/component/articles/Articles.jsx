@@ -5,7 +5,7 @@ class Articles extends Component {
 	render() {
 		//	console.log(this.props);
 		return (
-			<div>
+			<div className="articles-outer-container">
 				{this.props.articlesData.length &&
 					this.props.articlesData.map((article) => {
 						return (

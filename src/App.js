@@ -37,7 +37,7 @@ class App extends Component {
 
 				<Router>
 					<Home path="/" topicsTitles={this.state.topicsTitles} />
-					<PostArticle path="/article/create" />
+					<PostArticle path="/article/create" topics={this.state.topics} user={this.state.user} />
 					<Topic path="/topics/:topicslug" topicsData={this.state.topics} />
 					<Article path="/articles/:article_id" />
 				</Router>

@@ -21,11 +21,13 @@ nav {
 }
 
 .chart {
+	overflow: scroll;
 	grid-area: chart;
 	max-width: auto;
 }
 
 .main {
+	overflow: scroll;
 	grid-area: main;
 }
 
