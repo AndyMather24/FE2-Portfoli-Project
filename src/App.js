@@ -26,7 +26,7 @@ class App extends Component {
 						{' '}
 						<Link className="links" to="/">
 							{' '}
-							Site Name
+							Fake Reads
 						</Link>{' '}
 					</h1>
 					<Navbar className="nav-bar" topics={this.state.topics} user={this.state.user} />
@@ -39,7 +39,7 @@ class App extends Component {
 					<Home path="/" topicsTitles={this.state.topicsTitles} />
 					<PostArticle path="/article/create" topics={this.state.topics} user={this.state.user} />
 					<Topic path="/topics/:topicslug" topicsData={this.state.topics} />
-					<Article path="/articles/:article_id" />
+					<Article path="/articles/:article_id" user={this.state.user} />
 				</Router>
 			</div>
 		);

@@ -45,8 +45,14 @@ export const vote = (direction, id) => {
 };
 
 export const postArticle = (body, topic) => {
-	console.log(body);
 	return axios.post(`${baseUrl}topics/${topic}/articles`, body).then((res) => {
 		return res;
+	});
+};
+
+export const postComment = (art, comment) => {
+	console.log(typeof art);
+	return axios.post(`${baseUrl}/articles/${art}/comments`, comment).then((res) => {
+		return console.log(res);
 	});
 };

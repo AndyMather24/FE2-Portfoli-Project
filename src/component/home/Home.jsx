@@ -11,14 +11,12 @@ class Home extends Component {
 		return (
 			<div className="Homepage">
 				<nav />
-				<div className="chart">
-					<Topicchart topicsTitles={this.props.topicsTitles} />
-				</div>
+				<div className="chart">{/* <Topicchart topicsTitles={this.props.topicsTitles} /> */}</div>
 				<article className="main">
 					<Articles articlesData={this.state.articles} />
 				</article>
 
-				<footer> footer </footer>
+				{/* <footer> </footer> */}
 			</div>
 		);
 	}

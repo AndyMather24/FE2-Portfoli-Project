@@ -16,7 +16,3 @@
 .articleContainer .title:hover {
 	background-color: lightblue;
 }
-
-.articles-outer-container {
-	overflow: scroll;
-}

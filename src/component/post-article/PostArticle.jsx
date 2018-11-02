@@ -15,7 +15,10 @@ class PostArticle extends Component {
 					<h1>Create Article</h1>
 					<form onSubmit={this.handleSubmit}>
 						<input type="text" name="title" placeholder="Article title" onChange={this.handleChange} />
-						<select name="topic" onChange={this.handleSelect}>
+						<select defaultValue="" name="topic" onChange={this.handleSelect}>
+							<option value="" selected disabled hidden>
+								Select a topic
+							</option>
 							{this.props.topics.map((topic) => {
 								return (
 									<option key={topic._id} value={topic.slug}>

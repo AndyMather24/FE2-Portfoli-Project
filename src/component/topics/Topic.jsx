@@ -7,10 +7,13 @@ class Topic extends Component {
 		articles: []
 	};
 	render() {
+		const style = {
+			textAlign: 'center'
+		};
 		//console.log(this.state.articles);
 		return (
 			<div>
-				<h2>{this.props.topicslug}</h2>
+				<h2 style={style}>{this.props.topicslug}</h2>
 				<Articles articlesData={this.state.articles} topicslug={this.props.topicslug} />
 			</div>
 		);
