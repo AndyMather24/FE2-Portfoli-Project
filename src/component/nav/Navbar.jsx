@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link } from '@reach/router';
-
+import CreateArticle from '../create-article/CreateArticle';
 const Navbar = (props) => {
 	return (
 		<div>
@@ -12,6 +12,7 @@ const Navbar = (props) => {
 						</Fragment>
 					);
 				})}
+				{props.user.username && <CreateArticle />}
 			</nav>
 		</div>
 	);
